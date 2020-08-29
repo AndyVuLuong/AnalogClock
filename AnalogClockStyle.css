@@ -1,0 +1,75 @@
+body {
+  background: skyblue;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 50%; /* turns the clock into a circle*/
+  border: solid black;
+  position: relative; /*Scales everything to Clock size */
+}
+
+.clock .number {
+  --rotation: 0; /* -- allows variables to be used in var() */
+  position: absolute; /*Scaling the numbers to Clock size*/
+  width: 300px;
+  height: 300px;
+  text-align: center; /* makes sure numbers are within the clock */
+  transform: rotate(var(--rotation)); /* rotates the numbers */
+  font-size: 25px;
+}
+
+.clock .num1 { --rotation: 30deg; }
+.clock .num2 { --rotation: 60deg; }
+.clock .num3 { --rotation: 90deg; }
+.clock .num4 { --rotation: 120deg; }
+.clock .num5 { --rotation: 150deg; }
+.clock .num6 { --rotation: 180deg; }
+.clock .num7 { --rotation: 210deg; }
+.clock .num8 { --rotation: 240deg; }
+.clock .num9 { --rotation: 270deg; }
+.clock .num10 { --rotation: 300deg; }
+.clock .num11 { --rotation: 330deg; }
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute; /* scales to clock size */
+  bottom: 150px;
+  left: 150px; /*  bottom and left centers hand at middle */
+  background-color: black;
+  border-top-left-radius: 10px; /* curves the top of the hand */
+  border-top-right-radius: 10px;
+  transform-origin: bottom; /*make the bottom of the hand stay put when rotated*/
+  transform: rotate(calc(var(--rotation) * 1deg)); 
+  /*rotate(calc...) will be used in JavaScript */
+}
+
+.clock .dot {
+  position: absolute;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  top: 140px;
+  left: 140px;
+  border-radius: 50%;
+}
+
+.clock .hand.hour {
+  width: 12px;
+  height: 90px;
+  background-color: black;
+}
+
+.clock .hand.minute {
+  width: 8px;
+  height: 120px;
+  background-color: black;
+}
+
+.clock .hand.second {
+  width: 4px;
+  height: 130px;
+  background-color: red;
+}
